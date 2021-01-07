@@ -10,6 +10,6 @@ consumer.subscriptions.create({ channel: "RoomChannel", chatroom_id: 2}, {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
+    console.log(data)
   }
 });
