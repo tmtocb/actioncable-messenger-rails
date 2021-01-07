@@ -4,7 +4,7 @@
       <div class="card no-outline">
         <div class="card-body">
           <small>Logged in as</small><br>
-          <b><br></b>
+          <b><%= current_user.nickname %><br></b>
         </div>
       </div>
       <hr>
@@ -17,7 +17,7 @@
             <div class="card-body">
               <span class='name'><%= chatroom.name %></span><br>
               <span class='member-count'>
-                <small><%= chatroom.users.uniq.count %> Users</small>
+                <small> Users</small>
               </span>
             </div>
           </div>
@@ -31,7 +31,7 @@
             <span class="navbar-brand" href="#">
               <b><%= @chatroom.name %></b>
             </span>
-            <small><%= @chatroom.users.uniq.count %> Members</small>
+            <small><%= @chatroom.users.uniq.count %> Users</small>
           </nav>
           <div id="messages">
             <% @chatroom.messages.each do |message| %>
