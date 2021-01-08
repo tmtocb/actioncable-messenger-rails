@@ -20,8 +20,7 @@ class MessagesController < ApplicationController
      @message.user = current_user
      @message.save
 
-     html = render(partial: 'messages/message', locals: { message: @message })
-     ActionCable.server.broadcast "room_channel_#{@message.chatroom_id}", html: html
+     SendMessageJob.perform_later(@message)
   end
 
   def update

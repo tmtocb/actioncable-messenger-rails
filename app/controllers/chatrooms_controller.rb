@@ -1,30 +1,22 @@
 class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: [:show, :edit, :update, :destroy]
 
-  # GET /chatrooms
-  # GET /chatrooms.json
   def index
     @chatrooms = Chatroom.all
   end
 
-  # GET /chatrooms/1
-  # GET /chatrooms/1.json
   def show
     @chatrooms = Chatroom.all
     render 'index'
   end
 
-  # GET /chatrooms/new
   def new
     @chatroom = Chatroom.new
   end
 
-  # GET /chatrooms/1/edit
   def edit
   end
 
-  # POST /chatrooms
-  # POST /chatrooms.json
   def create
     @chatroom = Chatroom.new(chatroom_params)
 
@@ -39,8 +31,6 @@ class ChatroomsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /chatrooms/1
-  # PATCH/PUT /chatrooms/1.json
   def update
     respond_to do |format|
       if @chatroom.update(chatroom_params)
@@ -53,8 +43,6 @@ class ChatroomsController < ApplicationController
     end
   end
 
-  # DELETE /chatrooms/1
-  # DELETE /chatrooms/1.json
   def destroy
     @chatroom.destroy
     respond_to do |format|
@@ -64,12 +52,10 @@ class ChatroomsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_chatroom
       @chatroom = Chatroom.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def chatroom_params
       params.require(:chatroom).permit(:name)
     end
