@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User < ApplicationRecord 
   validates_uniqueness_of :nickname
 
   def self.generate
